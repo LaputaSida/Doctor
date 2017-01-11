@@ -1,0 +1,93 @@
+<html>
+	<head>
+		<title>
+		call
+		</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta charset="叫號未到">
+		<meta name="description" content="">
+		<meta name="keywords" content="HTML,CSS,XML,JavaScript">
+		<meta name="author" content="Hege Refsnes">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="w3.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+		<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+		<script>
+		$(document).on("pagecreate","#pageone",function(){
+		  $("h3").on("swipeleft",function(){
+			$(this).hide();
+			alert("叫號未到");
+		  });                       
+		});
+		
+		$(document).on("pagecreate","#pageone",function(){
+		  $("h3").on("swiperight",function(){ 
+			$(this).hide();
+			alert("報到成功 ");
+		  });  
+		  
+		});
+
+		</script>
+		<!--<script>
+		$(document).ready(function(){
+			$("h3").click(function(){
+				$(this).hide();
+			});
+		});
+		$(document).on("#pageone",function(){
+			$("h3").click(function(){
+				window.open("make.html")
+			});
+		});
+		$(document).on("pagecreate","#pageone",function(){
+		</script>-->
+	</head>
+
+<body>
+    <br>
+    <div data-role="page" id="pageone" class="w3-black w3-margin-bottom w3-top ">
+		<div class="w3-coll">
+		<div><br>
+			<h3 class="w3-container w3-red">
+				<a href="make.html" class="w3-left" target="b">				
+				鄭意臻<br>
+				熱敷包<br> 	
+				</a>
+				<a href="uncall.html" class="w3-right" target="b">				
+					<i class="fa fa-times fa-3x"></i>			
+				</a>
+			</h3>
+		</div>
+		</div>
+	
+		<div class="w3-coll">
+		<div><br>
+			<h3 class="w3-container w3-yellow">
+				<a href="make.html" class="w3-left" target="b">				
+				方亭亭<br>
+				伸展運動<br>	
+				</a>
+				<a href="uncall.html" class="w3-right" target="b">				
+					<i class="fa fa-spinner fa-spin fa-3x"></i>			
+				</a>
+			</h3>
+		</div>
+		</div>
+		
+		<div class="w3-coll">
+		<div><br>
+			<h3 class="w3-container w3-green">
+				<a href="make.html" class="w3-left" target="b">
+				李澄澄<br>
+				腰椎牽引<br> 	
+				</a>
+				<a href="uncall.html" class="w3-right" target="b">				
+					<i class="fa fa-spinner fa-spin fa-3x"></i>			
+				</a>
+			</h3>
+		</div>
+		</div>
+    </div>
+</body>
