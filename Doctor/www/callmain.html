@@ -18,7 +18,7 @@
 		var XHR = null; 
 		
 		$(document).on("focus","#test,.w3-coll",function(){
-			$.post("http://192.168.43.112/phoneGap/test1.PHP",
+			$.post("http://120.105.161.191/rehabilitation_scheduling/test1.PHP",
 			{
 				n:"1"
 			},
@@ -29,7 +29,7 @@
 		
 		$(document).on("pagecreate","#pageone",function(){
 		  $(document).on("swipeleft",".w3-coll",function(){
-			$.post("http://192.168.43.112/phoneGap/test1.PHP",
+			$.post("http://120.105.161.191/rehabilitation_scheduling/test1.PHP",
 			{
 				n:"2"
 			},
@@ -41,7 +41,7 @@
 		
 		$(document).on("pagecreate","#pageone",function(){
 		  $(document).on("swiperight",".w3-coll",function(){ 
-			$.post("http://192.168.43.112/phoneGap/test1.PHP",
+			$.post("http://120.105.161.191/rehabilitation_scheduling/test1.PHP",
 			{
 				n:"2"
 			},
@@ -54,7 +54,7 @@
 		
 		$(document).ready(function(){
 			$('body').everyTime('1s','A',function(){
-				$.post("http://192.168.43.112/phoneGap/test1.PHP",
+				$.post("http://120.105.161.191/rehabilitation_scheduling/test1.PHP",
 				{
 					n:"0"
 				},
@@ -64,7 +64,7 @@
 			});
 		});	
 		function call(){
-		$.post("http://192.168.43.112/phoneGap/test1.PHP",
+		$.post("http://120.105.161.191/rehabilitation_scheduling/test1.PHP",
 			{
 				n:"2"
 			},

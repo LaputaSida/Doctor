@@ -18,7 +18,7 @@ alert("We got a barcode\n" +
                 "Cancelled: " + result.cancelled);
 */
 function test(a){
-$.post( "http://192.168.43.112/phoneGap/test.PHP",{id:a}, function( data ) {	
+$.post( "http://120.105.161.191/rehabilitation_scheduling/test.PHP",{id:a}, function( data ) {	
           alert(data);
 	});
 }
@@ -28,7 +28,7 @@ function openScanner() {
           if(!result.cancelled){
 		  var s=result.text;
 		   var ss=s.substr(0,11);
-			$.post( "http://192.168.43.112/phoneGap/test.PHP",{id:ss}, function( data ) {	
+			$.post( "http://120.105.161.191/rehabilitation_scheduling/test.PHP",{id:ss}, function( data ) {	
 				alert(data);
 			});
 		}	
