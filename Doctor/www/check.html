@@ -25,13 +25,16 @@ $.post( "http://120.105.161.191/rehabilitation_scheduling/test.PHP",{id:a}, func
 function openScanner() {
   cordova.plugins.barcodeScanner.scan(
       function (result) {
+	  alert(result.cancelled);
           if(!result.cancelled){
-		  var s=result.text;
-		   var ss=s.substr(0,11);
+			alert(result.text);
+		   
 			$.post( "http://120.105.161.191/rehabilitation_scheduling/test.PHP",{id:ss}, function( data ) {	
 				alert(data);
 			});
-		}	
+		}				
+		alert(result.text);
+
       },
       function (error) {
           alert("Scanning failed: " + error);
