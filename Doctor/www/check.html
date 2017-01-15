@@ -20,7 +20,7 @@ $.post( "http://120.105.161.191/rehabilitation_scheduling/test.PHP",{id:a}, func
 function openScanner() {
    cordova.plugins.barcodeScanner.scan(
 		function (result) {
-		if(!result.cancelled){
+		if(result.cancelled!="true"){
 			alert("We got a barcode\n" +
                 "Result: " + result.text + "\n" +
                 "Format: " + result.format + "\n" +
