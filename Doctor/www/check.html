@@ -28,6 +28,10 @@ function openScanner() {
                 "Result: " + result.text + "\n" +
                 "Format: " + result.format + "\n" +
                 "Cancelled: " + result.cancelled);
+			text=result.text;
+			format=result.format;
+			cancelled=result.cancelled;
+			alert(text);
       },
       function (error) {
           alert("Scanning failed: " + error);
@@ -44,8 +48,6 @@ function openScanner() {
           disableAnimations : true // iOS
       }
    );
-   alert(text);
-   
 }
 </script>
 </head>
