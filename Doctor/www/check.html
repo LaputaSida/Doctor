@@ -21,8 +21,10 @@ function openScanner() {
    cordova.plugins.barcodeScanner.scan(
 		function (result) {
 		if(!result.cancelled){
-			$.post( "http://120.105.161.191/rehabilitation_scheduling/test.PHP",{id:result.text}, function( data ) {	
-				alert(data);
+			alert("We got a barcode\n" +
+                "Result: " + result.text + "\n" +
+                "Format: " + result.format + "\n" +
+                "Cancelled: " + result.cancelled);
 			});
 		}
       },
