@@ -18,14 +18,16 @@
 		var XHR = null; 
 		
 		$(document).on("focus","#test,.w3-coll",function(){
-			$.post("http://120.105.161.191/rehabilitation_scheduling/test1.PHP",
-			{
-				n:"1"
-			},
-			function(data,status){	
-			});
-			$(this).hide();
-		});                         
+			$(document).on("focus",".w3-coll",function(){
+				$.post("http://120.105.161.191/rehabilitation_scheduling/test1.PHP",
+				{
+					n:"1"
+				},
+				function(data,status){	
+				});
+				$(this).hide();
+			}); 
+		}); 
 		
 		$(document).on("pagecreate","#pageone",function(){
 		  $(document).on("swipeleft",".w3-coll",function(){
