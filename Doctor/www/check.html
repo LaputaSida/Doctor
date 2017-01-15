@@ -25,15 +25,14 @@ $.post( "http://120.105.161.191/rehabilitation_scheduling/test.PHP",{id:a}, func
 function openScanner() {
   cordova.plugins.barcodeScanner.scan(
       function (result) {
-	  alert(result.cancelled);
-          if(!result.cancelled){
-			alert(result.text);
-		   
-			$.post( "http://120.105.161.191/rehabilitation_scheduling/test.PHP",{id:ss}, function( data ) {	
-				alert(data);
-			});
+	  alert(result.cancelled+"1");
+	  
+          if(result.cancelled!="true"){
+		  
+			alert(result.text+"2");
+			
 		}				
-		alert(result.text);
+		alert(result.text+"3");
 
       },
       function (error) {
