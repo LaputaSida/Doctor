@@ -26,8 +26,9 @@ function openScanner() {
   cordova.plugins.barcodeScanner.scan(
       function (result) {
           if(!result.cancelled){
-		  var s=result.text.substr(0,11);
-			$.post( "http://192.168.43.112/phoneGap/test.PHP",{id:s}, function( data ) {	
+		  var s=result.text;
+		   var ss=s.substr(0,11);
+			$.post( "http://192.168.43.112/phoneGap/test.PHP",{id:ss}, function( data ) {	
 				alert(data);
 			});
 		}	
