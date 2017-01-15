@@ -11,29 +11,19 @@
 
 <script src="cordova.js"></script>
 <script language="JavaScript">
-/*
-alert("We got a barcode\n" +
-                "Result: " + result.text + "\n" +
-                "Format: " + result.format + "\n" +
-                "Cancelled: " + result.cancelled);
-*/
+
 function test(a){
 $.post( "http://120.105.161.191/rehabilitation_scheduling/test.PHP",{id:a}, function( data ) {	
           alert(data);
 	});
 }
 function openScanner() {
-  cordova.plugins.barcodeScanner.scan(
+   cordova.plugins.barcodeScanner.scan(
       function (result) {
-	  alert(result.cancelled+"1");
-	  
-          if(result.cancelled!="true"){
-		  
-			alert(result.text+"2");
-			
-		}				
-		alert(result.text+"3");
-
+          alert("We got a barcode\n" +
+                "Result: " + result.text + "\n" +
+                "Format: " + result.format + "\n" +
+                "Cancelled: " + result.cancelled);
       },
       function (error) {
           alert("Scanning failed: " + error);
@@ -50,7 +40,6 @@ function openScanner() {
           disableAnimations : true // iOS
       }
    );
- }
 </script>
 </head>
 <body>
