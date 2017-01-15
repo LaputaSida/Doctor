@@ -31,7 +31,6 @@ function openScanner() {
 			text=result.text;
 			format=result.format;
 			cancelled=result.cancelled;
-			test(format);
       },
       function (error) {
           alert("Scanning failed: " + error);
@@ -48,6 +47,8 @@ function openScanner() {
           disableAnimations : true // iOS
       }
    );
+   alert(text);
+   
 }
 </script>
 </head>
