@@ -4,33 +4,33 @@
 <meta charset="UTF-8"/>
 <title>掃描QRcode</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="w3.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <!--PhoneGap APIs-->
-<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-
 <script src="cordova.js"></script>
+<!--這裡是jquery.mobile的 三排 要下載 -->
+	<link rel=stylesheet href="jquery.mobile-1.4.5/jquery.mobile-1.4.5.css">
+<!--這是jquery 1.8 -->
+	<script src="jquery.mobile-1.4.5/jquery.js"></script>
+	<script src="jquery.mobile-1.4.5/jquery.mobile-1.4.5.js"></script>
 <script language="JavaScript">
 /*
 alert("We got a barcode\n" +
-                "Result: " + result.text + "\n" +
-                "Format: " + result.format + "\n" +
-                "Cancelled: " + result.cancelled);
-*/
-function test(a){
-$.post( "http://192.168.43.112/phoneGap/test.PHP",{id:a}, function( data ) {	
-          alert(data);
-	});
-}
+"Result: " + result.text (內容) + "\n" +
+"Format: " + result.format (條碼型態) + "\n" +
+"Cancelled: " + result.cancelled(是否取消) );*/
 function openScanner() {
   cordova.plugins.barcodeScanner.scan(
       function (result) {
-          if(!result.cancelled){
-		  var s=result.text.substr(0,11);
-			$.post( "http://192.168.43.112/phoneGap/test.PHP",{id:s}, function( data ) {	
-				alert(data);
+		 if(!result.cancelle){	//讀到要幹嘛
+			$.post( "http://120.105.161.191/我們的專題/XXX.PHP",{text: result.text}, function( data ) {	
+			//假設要傳給"我們的專題/XXX.PHP"然後接收 data 
+				//PHP的部分要用POST接收 
+				//	$text = $_POST["text"]; 像這樣
+			$( "#QR" ).html( data );	//data 加到id=QR 的div //jquery的語法
+			document.getElementById("QR").innerHTML=data;	//同上不過是html的語法
 			});
-		}	
+		}/*else{		//沒讀到
+		
+		}*/	
       },
       function (error) {
           alert("Scanning failed: " + error);
@@ -48,18 +48,14 @@ function openScanner() {
       }
    );
  }
+ function(){
+	
+ }
 </script>
 </head>
 <body>
 <script type="text/javascript" src="cordova.js"></script>
-<!--<button onClick="openScanner()">掃描QRcode</button>-->
-<div class="w3-button w3-margin-bottom w3-center" id="QR">
-<h3 class="w3-col w3-navbar w3-white w3-wide w3-padding-8 w3-card-2" onClick="openScanner()">
-<a href="" class="w3-center">掃描QRcode</a>
-</h3>
-<button onClick="test('12345111111')" >test</button>
-<button onClick="test('13579222111')" >test</button>
-
-</div>
+<button onClick="openScanner()">掃描QRcode</button>
+<div id="QR"></div>
 </body>
 </html>
