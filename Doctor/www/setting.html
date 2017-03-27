@@ -1,0 +1,59 @@
+<?php
+    mysql_connect("")
+    mysql_select_db("aaaa");
+    mysql_query("set names utf8");
+    $account=mysql_query(select *** from aaaa);
+                    ?>
+    <!DOCTYPE html>
+    <html>
+
+    <head>
+        <title>設定</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta charset="更新機器資料">
+        <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="w3.css">
+        <link rel="stylesheet" href="w3-theme-blue-grey.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+
+    <body><h2>
+        <div class="w3-left">
+            <div class="w3-col">
+                <a href="account.html" style="text-decoration:none;" target="b">
+                    <div class="w3-container w3-hover-shadow">
+                        <i class="fa fa-user-circle-o w3-xxlarge"></i>
+                        <div name="career"></div>
+                    </div>
+                    <?php
+                $account=mysql_fetch_row($doctor);
+                echo "$account[0]";//取出名稱
+                ?>
+                </a>
+            </div>
+            <div class="w3-col">
+                <a href="new.html" style="text-decoration:none;" target="b">
+                    <div class="w3-container w3-hover-shadow">
+                        更改負責區域
+                    </div>
+                </a>
+            </div>
+            <div class="w3-col">
+                <a href="machine.html" style="text-decoration:none;" target="b">
+                    <div class="w3-container w3-hover-shadow">
+                        編輯機器資料
+                    </div>
+                </a>
+            </div>
+            <div class="w3-col">
+                <a href="instructions.html" style="text-decoration:none;" target="b">
+                    <div class="w3-container w3-hover-shadow">
+                        使用說明
+                    </div>
+                </a>
+            </div>
+        </div>
+    </h2></body>
+
+    </html>
