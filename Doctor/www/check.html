@@ -3,23 +3,20 @@
 <head>
 <meta charset="UTF-8"/>
 <title>掃描QRcode</title>
+<meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <!--PhoneGap APIs-->
-<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-
+ 
 <script src="cordova.js"></script>
 <script language="JavaScript">
 var text="";
 var format="";
 var cancelled="";
 
-function test(a){
-$.post( "http://120.105.161.191/rehabilitation_scheduling/test.PHP",{id:a}, function( data ) {	
-          alert(data);
-	});
-}
 var name;
 var value;
 
@@ -30,10 +27,13 @@ var value;
 <!--<button onClick="openScanner()">掃描QRcode</button>-->
 <div class="w3-button w3-margin-bottom w3-center" id="QR">
 <h3 class="w3-col w3-navbar w3-white w3-wide w3-padding-8 w3-card-2" onClick="openScanner()">
-<a href="#" onClick="scan()" class="w3-center">掃描QRcode</a>
+<a href="_blank" onClick="scan()" class="w3-center">掃描QRcode</a>
 </h3>
 
 </div>
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+ <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+ <script type="text/javascript" src="cordova.js"></script>
 <script>
 function scan()
 {
@@ -46,7 +46,7 @@ function scan()
 					navigator.notification.prompt("Please enter name of data",  function(input){
 						 name = input.input1;
 						 value = result.text;
-						alert(name+"\n"+value);
+						alert(name);
 					});
 				}
 			}
