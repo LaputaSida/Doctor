@@ -1,27 +1,28 @@
 <html>
-	<head>
-		<title>
-		更新資料
-		</title>
-		 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<meta charset="update">
-		<meta name="keywords" content="HTML,CSS,XML,JavaScript">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" href="w3.css">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	</head>
-	<body> <br> <br> <br> <br> <br> <br> <br>
-	<header class="w3-display-container w3-content w3-hide-small margin-center" style="max-width:1500px">
-	
-	  <div class="w3-display-middle" style="width:80%">
-		<!-- Tabs -->	
-		
-		<!-- Accordion -->
-		<div id="Plusstre" class="w3-container w3-white w3-padding-16 myLink">			
-			<h3><div class="3-col  w3-black w3-wide w3-padding-8">
+
+<head>
+    <title>
+        更新資料
+    </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="update">
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="w3-theme-blue-grey.css">
+</head>
+
+<body class="w3-theme-l5 w3-display-container w3-content w3-hide-small margin-center" style="max-width:1500px">
+    <div class="w3-display-middle" style="width:80%">
+        <!-- Tabs -->
+        <!-- Accordion -->
+        <div id="Plusstre" class="w3-container w3-white w3-padding-32 myLink" style="padding-left:32px">
+            <h3><div class="3-col  w3-black w3-wide w3-padding-8">
 			<i class="fa fa-cog  w3-margin-left"></i>
 			  選擇區域
-			</div></h3><h5>
+			</div></h3>
+            <h5>
 			<div class="3-col w3-navbar w3-white w3-wide w3-padding-8 w3-card-2">
 			    <a href="machine.html" name="b" class="w3-padding">骨科牽引</a>
 			</div>
@@ -30,25 +31,23 @@
 			</div>
 			<div class="3-col w3-navbar w3-white w3-wide w3-padding-8 w3-card-2">
 				<a href="machine.html" name="b" class="w3-padding">物理治療</a>		
-			</div></h5>		
-		</div>
-	<script>	
-	// Accordion
-	function myFunction(id) {
-		var x = document.getElementById(id);
-		if (x.className.indexOf("w3-show") == -1) {
-			x.className += " w3-show";
-			x.previousElementSibling.className += " w3-theme-d1";
-		} else { 
-			x.className = x.className.replace("w3-show", "");
-			x.previousElementSibling.className = 
-			x.previousElementSibling.className.replace(" w3-theme-d1", "");
-		}
-	}
-	</script>
-	 </div>
-	</header>
-	</body>
-	
-</html>
+			</div></h5>
+        </div>
+        <script>
+        // Accordion
+        function myFunction(id) {
+            var x = document.getElementById(id);
+            if (x.className.indexOf("w3-show") == -1) {
+                x.className += " w3-show";
+                x.previousElementSibling.className += " w3-theme-d1";
+            } else {
+                x.className = x.className.replace("w3-show", "");
+                x.previousElementSibling.className =
+                    x.previousElementSibling.className.replace(" w3-theme-d1", "");
+            }
+        }
+        </script>
+    </div>
+</body>
 
+</html>
