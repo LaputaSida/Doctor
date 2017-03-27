@@ -20,35 +20,9 @@ $.post( "http://120.105.161.191/rehabilitation_scheduling/test.PHP",{id:a}, func
           alert(data);
 	});
 }
+var name;
+var value;
 
-function openScanner() {
-   cordova.plugins.barcodeScanner.scan(
-		function (result) {
-			alert("We got a barcode\n" +
-                "Result: " + result.text + "\n" +
-                "Format: " + result.format + "\n" +
-                "Cancelled: " + result.cancelled);
-			text=result.text;
-			format=result.format;
-			cancelled=result.cancelled;
-      },
-      function (error) {
-          alert("Scanning failed: " + error);
-      },
-      {
-          preferFrontCamera : true, // iOS and Android
-          showFlipCameraButton : true, // iOS and Android
-          showTorchButton : true, // iOS and Android
-          torchOn: true, // Android, launch with the torch switched on (if available)
-          prompt : "Place a barcode inside the scan area", // Android
-          resultDisplayDuration: 2000, // Android, display scanned text for X ms. 0 suppresses it entirely, default 1500
-          formats : "QR_CODE,PDF_417", // default: all but PDF_417 and RSS_EXPANDED
-          orientation : "landscape", // Android only (portrait|landscape), default unset so it rotates with the device
-          disableAnimations : true // iOS
-      }
-   );
-   
-}
 </script>
 </head>
 <body>
@@ -58,10 +32,32 @@ function openScanner() {
 <h3 class="w3-col w3-navbar w3-white w3-wide w3-padding-8 w3-card-2" onClick="openScanner()">
 <a href="" class="w3-center">掃描QRcode</a>
 </h3>
-<button onClick="test('24680222212')" >main</button>
-<button onClick="test('12345111111')" >test</button>
-<button onClick="test('13579222111')" >test</button>
 
 </div>
+<script>
+function scan()
+{
+	cordova.plugins.barcodeScanner.scan(
+		function (result) {
+			if(!result.cancelled)
+			{
+				if(result.format == "QR_CODE")
+				{
+					navigator.notification.prompt("Please enter name of data",  function(input){
+						 name = input.input1;
+						 value = result.text;
+						alert(name+"\n"+value);
+					});
+				}
+			}
+		},
+		function (error) {
+			alert("Scanning failed: " + error);
+		}
+   );
+}
+scan();
+
+</script>
 </body>
 </html>
