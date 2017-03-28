@@ -36,7 +36,8 @@
             function(result) {
                 if (!result.cancelled) {
                     if (result.format == "QR_CODE") {
-                        alert("Scanning success!!");
+                    	value = result.text;
+                        alert("Scanning success!!"+ "\n" + value);
                     }
                 }
             },
