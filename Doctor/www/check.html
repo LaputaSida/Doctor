@@ -38,6 +38,8 @@
                     if (result.format == "QR_CODE") {
                     	value = result.text;
                         alert("Scanning success!!"+ "\n" + value);
+						///
+						
                     }
                 }
             },
@@ -45,6 +47,13 @@
                 alert("Scanning failed: " + error);
             }
         );
+		
+		$.post("http://120.105.161.191/rehabilitation_scheduling/queue.PHP",
+		{
+			n:value
+		},
+		function(data,status){	
+		});
     }
     scan();
     </script>
