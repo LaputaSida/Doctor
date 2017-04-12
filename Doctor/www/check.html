@@ -34,7 +34,7 @@
             function(result) {
                 if (!result.cancelled) {
                     if (result.format == "QR_CODE") {
-                    	value = result.text;
+                    	text = result.text;
                         alert("Scanning success!!"+ "\n" + value);
 						///
 						
@@ -46,9 +46,9 @@
             }
         );
 		
-		$.post("http://120.105.161.191/rehabilitation_scheduling/queue.PHP",
+		$.post("http://120.105.161.191/rehabilitation_scheduling/queue.php",
 		{
-			id:value
+			id:text
 		},
 		function(data,status){	
 			document.getElementById("QR").innerHTML=data;
