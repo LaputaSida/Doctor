@@ -36,8 +36,13 @@
                     if (result.format == "QR_CODE") {
                     	text = result.text;
                         alert("Scanning success!!"+ "\n" + text);
-						///
-						
+							$.post("http://120.105.161.191/rehabilitation_scheduling/queue.php",
+							{
+								id:text
+							},
+							function(data,status){	
+								document.getElementById("QR").innerHTML=data;
+							});	
                     }
                 }
             },
@@ -46,13 +51,7 @@
             }
         );
 		
-		$.post("http://120.105.161.191/rehabilitation_scheduling/queue.php",
-		{
-			id:text
-		},
-		function(data,status){	
-			document.getElementById("QR").innerHTML=data;
-		});		
+			
 	}
     </script>
 </body>
