@@ -28,7 +28,14 @@
 <a href="#" onClick="scan()" class="w3-center">掃描QRcode</a>
 </h3>
     </div>
+	   
+	   <input type="button" value="Close" onClick="c()">
+
     <script>
+	 function c() {	
+		window.close();
+	 }
+	
     function scan() {	
         cordova.plugins.barcodeScanner.scan(
             function(result) {
@@ -45,19 +52,14 @@
 							});	
                     }
                 }
-				window.opener=null;
-				window.close();
-				alert("END");
+				c();
             },
             function(error) {
                 alert("Scanning failed: " + error);
             }
         );
 	}
-	scan();
-	scan();
-	scan();
-	scan();
+	
     </script>
 </body>
 
