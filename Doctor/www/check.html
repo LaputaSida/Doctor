@@ -29,8 +29,7 @@
 </h3>
     </div>
     <script>
-    function scan() {
-	alert("前");	
+    function scan() {	
         cordova.plugins.barcodeScanner.scan(
             function(result) {
                 if (!result.cancelled) {
@@ -46,12 +45,13 @@
 							});	
                     }
                 }
+				window.opener=null;
+				window.close();
             },
             function(error) {
                 alert("Scanning failed: " + error);
             }
         );
-	alert("後");	
 	}
     </script>
 </body>
