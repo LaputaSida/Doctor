@@ -30,6 +30,7 @@
     </div>
     <script>
     function scan() {
+	alert("前");	
         cordova.plugins.barcodeScanner.scan(
             function(result) {
                 if (!result.cancelled) {
@@ -50,8 +51,7 @@
                 alert("Scanning failed: " + error);
             }
         );
-		
-		 alert(text);	
+	alert("後");	
 	}
     </script>
 </body>
